@@ -9,7 +9,7 @@ const Footer = () => {
       <Layout className="py-8 flex items-center justify-between">
         <span>{new Date().getFullYear()} &copy; All Rights Reserved</span>
         <div className="flex">
-          <GithubIcon className="w-6 mr-2" />
+          <GithubIcon className="!w-6 mr-2" />
           <Link href="https://github.com/ucantbe-jagmeet">
             @ucantbe-jagmeet
           </Link>
