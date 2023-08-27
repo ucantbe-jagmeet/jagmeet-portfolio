@@ -1,5 +1,5 @@
 "use client";
-import { AnimatedText, Layout } from "@/components";
+import { AnimatedText, Layout, Skills } from "@/components";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Img from "../../assets/jagmeet.jpeg";
@@ -57,7 +57,7 @@ const page = () => {
   return (
     <main className="flex w-full flex-col items-center justify-center ">
       <Layout className="pt-10">
-        <AnimatedText text="Sky is the Limit..." className="mb-16" />
+        <AnimatedText text="Sky is the Limit..." className="mb-16 !text-6xl" />
         <div className="grid w-full grid-cols-8 gap-16">
           <div className="col-span-3 flex flex-col items-start justify-start">
             <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
@@ -101,6 +101,7 @@ const page = () => {
             })}
           </div>
         </div>
+        <Skills />
       </Layout>
     </main>
   );
