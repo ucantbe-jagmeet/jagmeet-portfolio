@@ -41,7 +41,6 @@ const navIcons = [
 ];
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
-  console.log(router.asP);
   return (
     <Link href={href} className={`${className} relative group`}>
       {title}
@@ -58,7 +57,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const Navbar = () => {
   return (
-    <main className="w-full px-28 py-9 font-medium flex items-center justify-between">
+    <main className="w-full px-28 py-5 font-medium flex items-center justify-between">
       <nav>
         {navPages.map((page, index) => {
           return (
