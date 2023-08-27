@@ -57,7 +57,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const Navbar = () => {
   return (
-    <main className="w-full px-28 py-5 font-medium flex items-center justify-between">
+    <main className="w-full px-28 py-7 font-medium flex items-center justify-between ">
       <nav>
         {navPages.map((page, index) => {
           return (
