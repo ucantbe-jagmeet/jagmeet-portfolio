@@ -101,7 +101,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full px-28 py-7 font-medium flex items-center justify-between dark:text-light relative">
+    <header className="w-full px-28 py-7 font-medium flex items-center justify-between dark:text-light relative z-10 lg:px-16 md:px-12 sm:px-8">
       <button onClick={() => setIsOpen(!isOpen)} className="hidden lg:flex">
         <FaBars className="scale-150 text-dark dark:text-light hover:rotate-90 transition-all duration-300" />
       </button>
@@ -152,7 +152,11 @@ const Navbar = () => {
       </div>
 
       {isOpen ? (
-        <div className="min-w-[80vw] min-h-[70vh] flex flex-col justify-evenly items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark/90 dark:bg-light/60 rounded-lg backdrop-blur-md ">
+        <motion.div
+          initial={{ scale: 0, opacity: 0, x: "-50%", y: "-50%" }}
+          animate={{ scale: 1, opacity: 1 }}
+          className="min-w-[80vw] min-h-[70vh] flex flex-col justify-evenly items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark/90 dark:bg-light/60 rounded-lg backdrop-blur-md "
+        >
           <nav className="flex items-center flex-col justify-center">
             {navPages.map((page, index) => {
               return (
@@ -197,7 +201,7 @@ const Navbar = () => {
           )}
         </button> */}
           </nav>
-        </div>
+        </motion.div>
       ) : null}
 
       <div className="absolute left-[50%]  translate-x-[-50%] top-1">
