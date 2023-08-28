@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { useRouter } from "next/navigation";
@@ -10,6 +10,8 @@ import {
   SunIcon,
   TwitterIcon,
 } from "./Icons";
+
+import { FaBars } from "react-icons/fa";
 
 import { motion } from "framer-motion";
 import useThemeSwitcher from "./hooks/useThemeSwitcher";
@@ -66,39 +68,45 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const Navbar = () => {
   const [mode, setMode] = useThemeSwitcher();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <main className="w-full px-28 py-7 font-medium flex items-center justify-between dark:text-light">
-      <nav>
-        {navPages.map((page, index) => {
-          return (
-            <CustomLink
-              key={index}
-              href={page.href}
-              className={index === 0 ? "mr-4" : "mx-4"}
-              title={page.title}
-            />
-          );
-        })}
-      </nav>
+    <header className="w-full px-28 py-7 font-medium flex items-center justify-between dark:text-light relative">
+      <button onClick={() => setIsOpen(!isOpen)} className="hidden lg:flex">
+        <FaBars className="scale-150 text-dark dark:text-light hover:rotate-90 transition-all duration-300" />
+      </button>
 
-      <nav className="flex items-center justify-center flex-wrap gap-x-5">
-        {navIcons.map((icon, index) => {
-          return (
-            <motion.a
-              href={icon.href}
-              key={index}
-              target={"_blank"}
-              title={icon.title}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {icon.icon}
-            </motion.a>
-          );
-        })}
+      <div className="w-full flex justify-between items-center lg:hidden">
+        <nav>
+          {navPages.map((page, index) => {
+            return (
+              <CustomLink
+                key={index}
+                href={page.href}
+                className={index === 0 ? "mr-4" : "mx-4"}
+                title={page.title}
+              />
+            );
+          })}
+        </nav>
 
-        <button
+        <nav className="flex items-center justify-center flex-wrap gap-x-5">
+          {navIcons.map((icon, index) => {
+            return (
+              <motion.a
+                href={icon.href}
+                key={index}
+                target={"_blank"}
+                title={icon.title}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {icon.icon}
+              </motion.a>
+            );
+          })}
+
+          {/* <button
           onClick={() => setMode(mode === "light" ? "dark" : "light")}
           className={`flex items-center justify-center rounded-full p-1 ${
             mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
@@ -109,12 +117,59 @@ const Navbar = () => {
           ) : (
             <MoonIcon className={"fill-dark"} />
           )}
-        </button>
-      </nav>
+        </button> */}
+        </nav>
+      </div>
+
+      <div className="min-w-[70vw] flex flex-col justify-between items-center fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-dark">
+        <nav>
+          {navPages.map((page, index) => {
+            return (
+              <CustomLink
+                key={index}
+                href={page.href}
+                className={index === 0 ? "mr-4" : "mx-4"}
+                title={page.title}
+              />
+            );
+          })}
+        </nav>
+
+        <nav className="flex items-center justify-center flex-wrap gap-x-5">
+          {navIcons.map((icon, index) => {
+            return (
+              <motion.a
+                href={icon.href}
+                key={index}
+                target={"_blank"}
+                title={icon.title}
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {icon.icon}
+              </motion.a>
+            );
+          })}
+
+          {/* <button
+          onClick={() => setMode(mode === "light" ? "dark" : "light")}
+          className={`flex items-center justify-center rounded-full p-1 ${
+            mode === "light" ? "bg-dark text-light" : "bg-light text-dark"
+          }`}
+        >
+          {mode === "dark" ? (
+            <SunIcon className={"fill-dark"} />
+          ) : (
+            <MoonIcon className={"fill-dark"} />
+          )}
+        </button> */}
+        </nav>
+      </div>
+
       <div className="absolute left-[50%]  translate-x-[-50%] top-1">
         <Logo />
       </div>
-    </main>
+    </header>
   );
 };
 
