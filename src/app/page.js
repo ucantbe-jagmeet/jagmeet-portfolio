@@ -6,7 +6,7 @@ import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
 export default function Home() {
   return (
-    <main className="flex items-center text-dark w-full min-h-screen ">
+    <main className="flex items-center text-dark w-full min-h-screen dark:text-light">
       <Layout className="pt-0">
         <div className="flex items-center justify-between w-full mt-10">
           <div className="w-1/2">
@@ -32,7 +32,7 @@ export default function Home() {
               <Link
                 href="/JagmeetSingh_19124027_resume.pdf"
                 target={"_blank"}
-                className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark"
+                className="flex items-center bg-dark text-light p-2.5 px-6 rounded-lg font-semibold hover:bg-light hover:text-dark border-2 border-solid border-transparent hover:border-dark dark:text-dark dark:bg-light hover:dark:bg-dark hover:dark:text-light hover:dark:border-light"
                 download={true}
               >
                 Resume <LinkArrow className="ml-2" />
@@ -40,7 +40,7 @@ export default function Home() {
               <Link
                 href="mailto:jagmeetsingh2921@gmail.com"
                 target={"_blank"}
-                className="ml-4 text-lg font-medium capitalize text-dark underline"
+                className="ml-4 text-lg font-medium capitalize text-dark underline dark:text-light"
               >
                 contact
               </Link>

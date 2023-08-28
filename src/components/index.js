@@ -6,7 +6,10 @@ import LiIcon from "./LiIcon";
 import Logo from "./Logo";
 import Navbar from "./Navbar";
 import Skills from "./Skills";
+import useThemeSwitcher from "./hooks/useThemeSwitcher";
+
 export {
+  useThemeSwitcher,
   LiIcon,
   Experience,
   Skills,
