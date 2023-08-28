@@ -8,7 +8,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
   return (
     <li
       ref={ref}
-      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between"
+      className="my-8 first:mt-0 last:mb-0 w-[60%] mx-auto flex flex-col items-center justify-between md:w-[80%]"
     >
       <motion.div
         initial={{ y: 50 }}
@@ -16,7 +16,7 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
         transition={{ duration: 0.5, type: "spring" }}
       >
         <LiIcon reference={ref} />
-        <h3 className="capitalize font-bold text-2xl">
+        <h3 className="capitalize font-bold text-2xl md:text-xl xs:text-lg">
           {position}&nbsp;
           <a
             href={companyLink}
@@ -26,10 +26,10 @@ const Details = ({ position, company, companyLink, time, address, work }) => {
             @{company}
           </a>
         </h3>
-        <span className="capitalize font-medium text-dark/75 dark:text-light/60">
+        <span className="capitalize font-medium text-dark/75 dark:text-light/60 xs:text-sm">
           {time} | {address}
         </span>
-        <p className="font-medium w-full">{work}</p>
+        <p className="font-medium w-full md:text-sm">{work}</p>
       </motion.div>
     </li>
   );
@@ -93,16 +93,16 @@ const Experience = () => {
     offset: ["start end", "center start"],
   });
   return (
-    <div className="my-64">
-      <h2 className="font-bold text-5xl mb-32 w-full text-center">
+    <div className="my-64 md:my-32">
+      <h2 className="font-bold text-5xl mb-32 w-full text-center md:text-4xl xs:text-2xl">
         Experience
       </h2>
-      <div ref={ref} className="w-[75%] mx-auto relative">
+      <div ref={ref} className="w-[75%] mx-auto relative lg:2[90%] md:w-full">
         <motion.div
           style={{ scaleY: scrollYProgress }}
-          className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light"
+          className="absolute left-9 top-0 w-[4px] h-full bg-dark origin-top dark:bg-light md:w-[2px] xs:left-[20px]"
         />
-        <ul className="flex w-full flex-col items-start justify-between ml-4">
+        <ul className="flex w-full flex-col items-start justify-between ml-4 xs:ml-2 ">
           {data.map((detail, index) => {
             return (
               <Details

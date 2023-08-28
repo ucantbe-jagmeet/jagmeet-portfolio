@@ -56,11 +56,14 @@ const AnimatedNumbers = ({ value }) => {
 const page = () => {
   return (
     <main className="flex w-full flex-col items-center justify-center dark:text-light ">
-      <Layout className="pt-10">
-        <AnimatedText text="Sky is the Limit..." className="mb-16 !text-6xl" />
-        <div className="grid w-full grid-cols-8 gap-16">
-          <div className="col-span-3 flex flex-col items-start justify-start">
-            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 ">
+      <Layout className="pt-10 xl:p-24 lg:p-16 md:p-12 sm:p-8">
+        <AnimatedText
+          text="Sky is the Limit..."
+          className="mb-16 lg:!text-6xl sm:!text-6xl xs:!text-4xl sm:mb-8"
+        />
+        <div className="grid w-full grid-cols-8 gap-16 sm:gap-6">
+          <div className="col-span-3 flex flex-col items-start justify-start xl:col-span-4 md:order-2 md:col-span-8">
+            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 md:self-center">
               Biography
             </h2>
             {paraData.map((item, index) => {
@@ -76,24 +79,25 @@ const page = () => {
               );
             })}
           </div>
-          <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark  dark:border-light p-8">
+
+          <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark  dark:border-light p-8 xl:col-span-4 md:order-1 md:col-span-8 md:w-fit mx-auto ">
             <Image
               src={Img}
               alt="Jagmeet Singh"
-              className="w-[30rem] h-auto rounded-2xl shadow-xl"
+              className="w-[30rem] md:w-[25rem]  h-auto rounded-2xl shadow-xl"
             />
           </div>
-          <div className="col-span-2 flex flex-col items-end ">
+          <div className="col-span-2 flex flex-col items-end xl:col-span-8 xl:flex-row xl:justify-evenly justify-start md:order-3">
             {sideBar.map((item, index) => {
               return (
                 <div
                   key={index}
                   className="flex flex-col items-end justify-center mt-20"
                 >
-                  <span className="inline-block text-5xl font-semibold">
+                  <span className="inline-block text-5xl font-semibold md:text-6xl sm:text-5xl xs:text-4xl md:self-center">
                     <AnimatedNumbers value={item.title} />+
                   </span>
-                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
+                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75 md:text-lg sm:text-base xs:text-sm">
                     {item.text}
                   </h2>
                 </div>
