@@ -55,12 +55,12 @@ const AnimatedNumbers = ({ value }) => {
 
 const page = () => {
   return (
-    <main className="flex w-full flex-col items-center justify-center ">
+    <main className="flex w-full flex-col items-center justify-center dark:text-light ">
       <Layout className="pt-10">
         <AnimatedText text="Sky is the Limit..." className="mb-16 !text-6xl" />
         <div className="grid w-full grid-cols-8 gap-16">
           <div className="col-span-3 flex flex-col items-start justify-start">
-            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75">
+            <h2 className="mb-4 text-lg font-bold uppercase text-dark/75 dark:text-light/75 ">
               Biography
             </h2>
             {paraData.map((item, index) => {
@@ -76,7 +76,7 @@ const page = () => {
               );
             })}
           </div>
-          <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark p-8">
+          <div className="col-span-3 relative h-max rounded-2xl border-2 border-solid border-dark  dark:border-light p-8">
             <Image
               src={Img}
               alt="Jagmeet Singh"
@@ -93,7 +93,7 @@ const page = () => {
                   <span className="inline-block text-5xl font-semibold">
                     <AnimatedNumbers value={item.title} />+
                   </span>
-                  <h2 className="text-xl font-medium capitalize text-dark/75">
+                  <h2 className="text-xl font-medium capitalize text-dark/75 dark:text-light/75">
                     {item.text}
                   </h2>
                 </div>

@@ -14,25 +14,33 @@ import project4 from "../../assets/project4.png";
 
 const FeaturedProject = ({ type, title, summary, img, link, github }) => {
   return (
-    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light shadow-2xl p-12">
+    <article className="w-full flex items-center justify-between rounded-3xl border border-solid border-dark bg-light dark:bg-dark shadow-2xl p-12 dark:border-light ">
       <Link
         href={link}
         target="_blank"
         className="w-1/2 cursor-pointer overflow-hidden rounded-lg"
       >
-        <Image src={img} alt={title} className="w-full h-auto shadow-2xl" />
+        <Image
+          src={img}
+          alt={title}
+          className="w-full h-auto !shadow-2xl !dark:shadow-white"
+        />
       </Link>
 
-      <div className="w-1/2 flex flex-col items-start justify-between pl-16">
-        <span className="text-primary font-medium text-xl">{type}</span>
+      <div className="w-1/2 flex flex-col items-start justify-between pl-16 ">
+        <span className="text-primary font-medium text-xl dark:text-primaryDark">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-3xl font-bold">{title}</h2>
+          <h2 className="my-2 w-full text-left text-3xl font-bold dark:text-light">
+            {title}
+          </h2>
         </Link>
-        <p className="my-2 font-medium text-dark">{summary}</p>
+        <p className="my-2 font-medium text-dark dark:text-light">{summary}</p>
 
         <div className="mt-2 flex items-center">
           <Link
@@ -45,7 +53,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
           <Link
             href={link}
             target="_blank"
-            className="ml-4 rounded-lg bg-dark text-light p-1 px-3 "
+            className="ml-4 rounded-lg bg-dark text-light p-1 px-3 dark:text-dark dark:bg-light dark:font-semibold"
           >
             Visit Project
           </Link>
@@ -57,7 +65,7 @@ const FeaturedProject = ({ type, title, summary, img, link, github }) => {
 
 const Project = ({ title, type, img, link, github }) => {
   return (
-    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative">
+    <article className="w-full flex flex-col items-center justify-center rounded-2xl border border-solid border-dark bg-light p-6 relative dark:bg-dark dark:border-light">
       <Link
         href={link}
         target="_blank"
@@ -67,20 +75,22 @@ const Project = ({ title, type, img, link, github }) => {
       </Link>
 
       <div className="w-full flex flex-col items-start justify-between mt-4">
-        <span className="text-primary font-medium text-xl">{type}</span>
+        <span className="text-primary font-medium text-xl dark:text-primaryDark">
+          {type}
+        </span>
         <Link
           href={link}
           target="_blank"
           className="hover:underline underline-offset-2"
         >
-          <h2 className="my-2 w-full text-left text-2xl font-bold">{title}</h2>
+          <h2 className="my-2 w-full text-left text-2xl font-bold ">{title}</h2>
         </Link>
 
         <div className="mt-2 flex items-center w-full justify-between">
           <Link
             href={link}
             target="_blank"
-            className=" rounded-lg bg-dark text-light p-1 px-3 "
+            className=" rounded-lg bg-dark text-light p-1 px-3 dark:text-dark dark:bg-light dark:font-semibold"
           >
             Visit Project
           </Link>
@@ -150,7 +160,7 @@ const ProjectsData = [
 
 const Page = () => {
   return (
-    <main className="w-full mb-16 flex flex-col items-center justify-center">
+    <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
       <Layout className="pt-16">
         <AnimatedText
           text="Imagination Trumps Knowledge!"
