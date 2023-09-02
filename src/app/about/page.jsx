@@ -1,5 +1,5 @@
 "use client";
-import { AnimatedText, Experience, Layout, Skills } from "../..components";
+import { AnimatedText, Experience, Layout, Skills } from "../../components";
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import Img from "../../assets/jagmeet.jpeg";
