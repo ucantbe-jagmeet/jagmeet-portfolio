@@ -29,6 +29,10 @@ const navPages = [
     title: "Projects",
     href: "/project",
   },
+  {
+    title: "Feedback",
+    href: "/feedback",
+  },
 ];
 
 const navIcons = [
