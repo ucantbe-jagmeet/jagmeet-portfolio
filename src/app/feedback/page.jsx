@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { AnimatedText, Layout } from "@/components";
-
+import toast, { Toaster } from "react-hot-toast";
 const Page = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -27,13 +27,11 @@ const Page = () => {
           "Content-Type": "application/json",
         },
       });
-
       if (response.status === 200) {
-        console.log("Form submitted successfully");
-        // Optionally, you can reset the form here
         setFormData({ name: "", email: "", feedback: "" });
+        toast.success("Form submitted successfully!");
       } else {
-        console.error("Form submission failed");
+        toast.error("Form submission failed");
       }
     } catch (error) {
       console.error("Form submission error:", error);
@@ -42,10 +40,11 @@ const Page = () => {
 
   return (
     <main className="w-full mb-16 flex flex-col items-center justify-center dark:text-light">
+      <Toaster position="top-right" reverseOrder={true} className="z-[1000]" />
       <Layout className="pt-16 xl:p-24 lg:p-16 md:p-12 sm:p-8">
         <AnimatedText
           text="Strive for continuous improvement"
-          className="text-5xl mb-16 lg:text-5xl sm:mb-8 sm:text-6xl xs:text-4xl"
+          className="!text-5xl mb-16 lg:text-5xl sm:mb-8 sm:text-6xl xs:text-4xl"
         />
         <div>
           <form
