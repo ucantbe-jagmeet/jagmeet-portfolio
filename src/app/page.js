@@ -1,9 +1,8 @@
-import { AnimatedText, Layout } from "@/components";
-
+import { AnimatedText, Layout } from "../components";
 import Img from "../assets/jagmeet1.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import { LinkArrow } from "@/components/Icons";
+import { LinkArrow } from "../components/Icons";
 export default function Home() {
   return (
     <main className="flex items-center text-dark w-full min-h-screen dark:text-light ">

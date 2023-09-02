@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
-import { AnimatedText, Layout } from "@/components";
+import { AnimatedText, Layout } from "../../components";
 import toast, { Toaster } from "react-hot-toast";
 const Page = () => {
   const [formData, setFormData] = useState({
