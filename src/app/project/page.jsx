@@ -1,4 +1,4 @@
-import { AnimatedText, Layout } from "@/components";
+import { AnimatedText, Layout } from "../../components";
 import { GithubIcon } from "../../components/Icons";
 import Image from "next/image";
 import Link from "next/link";
